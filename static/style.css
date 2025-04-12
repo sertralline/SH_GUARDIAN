@@ -1,12 +1,21 @@
 /* General Styles */
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Cairo", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f6f7;
-    margin: 0;
-    padding: 0;
     text-align: center;
     direction: rtl;
+    margin: 0;
+    padding: 0;
 }
+
+.arabic-message {
+    font-family: "Cairo", Arial, sans-serif;
+}
+
+h2, p, input, button {
+    font-family: "Cairo", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 
 /* Responsive Container */
 .container {
