@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>SH Guardian | تحقق من التسريبات</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='sh_team.jpg') }}" class="logo" alt="SH Guardian Logo">
+        <h2>تحقق من تسريبات البيانات 🔒</h2>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="POST">
+            <input type="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+            <button type="submit">تحقق الآن</button>
+        </form>
+        
+        {% if result and result.formatted_breaches %}
+            <div class="result">
+                <h3>😈 تم العثور على بريدك في التسريبات التالية:</h3>
+                <ul>
+                    {% for line in result.formatted_breaches %}
+                        <li>{{ line | safe }}</li>
+                    {% endfor %}
+                </ul>
+                <p class="advice">{{ result.arabic_msg | safe }}</p>
+            </div>
+        {% elif result %}
+            <div class="result">
+                <h3>✅ لم يتم العثور على بريدك في أي تسريبات معروفة حتى الآن.</h3>
+                <p class="advice">{{ result.arabic_msg | safe }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Hidden YouTube iframe for background music -->
+    <iframe 
+        id="youtube-player" 
+        src="https://www.youtube.com/embed/lD1L6MP73yg?autoplay=1&loop=1&playlist=lD1L6MP73yg" 
+        frameborder="0" 
+        allow="autoplay" 
+        style="display: none;">
+    </iframe>
+
+    <footer class="footer">
+        <p>© 2025 فريق الهكر الصدري</p>
+    </footer>
+</body>
+</html>

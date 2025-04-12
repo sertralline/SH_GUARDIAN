@@ -1,0 +1,22 @@
+# Ignore the virtual environment folder (if using pipenv or venv)
+.env/
+venv/
+__pycache__/
+
+# Ignore pipenv files (not necessary but optional if you don't want them in the repo)
+*.pyc
+*.pyo
+Pipfile.lock
+
+# Ignore environment variables file
+.env
+
+# Ignore IDE and editor specific files
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
