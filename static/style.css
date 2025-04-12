@@ -1,50 +1,67 @@
+/* General Styles */
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f6f7;
-    text-align: center;
-    direction: rtl;
     margin: 0;
     padding: 0;
+    text-align: center;
+    direction: rtl;
 }
 
+/* Responsive Container */
 .container {
     max-width: 600px;
-    margin: 3em auto;
+    width: 90%;
+    margin: 2em auto;
     padding: 2em;
     background-color: #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
-    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Logo */
 .logo {
-    width: 130px;
+    width: 120px;
     border-radius: 50%;
     margin-bottom: 1em;
 }
 
+/* Headings */
 h2 {
+    font-size: 1.8rem;
     color: #007bff;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
+    text-align: center;
 }
 
+/* Input Field */
 form input[type="email"] {
-    padding: 0.8em;
-    width: 90%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 500px;
+    padding: 0.9em;
     margin-bottom: 1em;
-    border-radius: 8px;
     border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
     text-align: right;
 }
 
+/* Buttons */
 form button {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.8em;
     background-color: #007bff;
     color: white;
+    font-size: 1rem;
+    font-weight: bold;
     border: none;
-    padding: 0.8em 1.5em;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
@@ -54,10 +71,11 @@ form button:hover {
 .music-btn {
     background-color: #28a745;
     color: white;
-    padding: 0.5em 1em;
+    padding: 0.6em 1.5em;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 1rem;
     margin-top: 1em;
 }
 
@@ -65,46 +83,54 @@ form button:hover {
     background-color: #218838;
 }
 
+/* Result Section */
 .result {
     margin-top: 2em;
-    text-align: right;
-    font-size: 1em;
+    padding: 1.5em;
     background-color: #f8f9fa;
-    padding: 1em;
-    border-radius: 10px;
     border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: right;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 ul li {
-    padding: 0.5em 0;
+    margin-bottom: 0.8em;
+    font-size: 1rem;
 }
 
+/* Advice Section */
 .advice {
     margin-top: 1.5em;
-    font-size: 0.95em;
+    font-size: 0.95rem;
     color: #444;
     text-align: right;
 }
 
+/* Error Styling */
 .error {
     color: red;
     margin-bottom: 1em;
+    font-size: 1rem;
 }
 
+/* Footer */
 .footer {
     margin-top: 3em;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     color: #888;
-    text-align: center;
     padding-bottom: 2em;
+    text-align: center;
 }
 
-
+/* Arabic Message */
 .arabic-message {
     font-family: Arial, sans-serif;
     direction: rtl;
@@ -123,16 +149,17 @@ ul li {
 }
 
 .arabic-message p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 1em;
 }
 
 .arabic-message ol {
-    padding-right: 15px;
+    padding-right: 20px;
 }
 
 .arabic-message li {
-    margin-bottom: 10px;
+    margin-bottom: 0.8em;
+    font-size: 1rem;
 }
 
 .arabic-message a {
@@ -142,4 +169,69 @@ ul li {
 
 .arabic-message a:hover {
     text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 1em;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    form input[type="email"] {
+        font-size: 0.95rem;
+    }
+
+    form button, .music-btn {
+        font-size: 0.9rem;
+        padding: 0.7em;
+    }
+
+    .result {
+        font-size: 0.9rem;
+        padding: 1em;
+    }
+
+    ul li {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0.8em;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    form input[type="email"] {
+        font-size: 0.85rem;
+    }
+
+    form button, .music-btn {
+        font-size: 0.8rem;
+        padding: 0.6em;
+    }
+
+    .result {
+        font-size: 0.85rem;
+        padding: 0.8em;
+    }
+
+    ul li {
+        font-size: 0.85rem;
+    }
 }
